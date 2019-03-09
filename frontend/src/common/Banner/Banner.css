@@ -1,0 +1,9 @@
+
+.banner{
+    width: 100%;
+    color: cyan;
+    text-align:center;
+}
+.banner-container{
+    margin: auto;
+}

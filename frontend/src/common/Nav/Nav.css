@@ -1,0 +1,35 @@
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "left mid right";
+}
+
+.nav .nav-logo-left{
+    grid-area: left;
+    background-color:red;
+}
+
+.nav .nav-mid{
+    grid-area: mid;
+    background-color:blue;
+}
+
+.nav .nav-right{
+    grid-area:right;
+    background-color: green;
+}
+
+.nav .nav-right .nav-right-list-container{
+    padding: 0;
+    margin:0;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav .nav-right .nav-right-list-container li {
+    list-style: none;
+    padding:0;
+    margin:0;
+    
+
+}
