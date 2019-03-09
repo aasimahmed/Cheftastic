@@ -1,9 +1,9 @@
 import React from "react";
 import "./Title.css";
 
-const Title = ({name, titleClass}) => {
+const Title = ({title, titleClass}) => {
     return(
-    <h2 className={titleClass}>{name}</h2>
+    <h2 className={titleClass}>{title}</h2>
 
 )
 }

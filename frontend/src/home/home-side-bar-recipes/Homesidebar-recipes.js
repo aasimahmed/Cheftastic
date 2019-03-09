@@ -7,13 +7,13 @@ import Recipecard from "../../common/Recipecard/Recipecard";
 
 const HomesidebarRecipes = ({recipes}) => {
 
-    const userRecipes = recipes.map(val => ( //RENDER OUT EACH RECIPIE
+    const userRecipes = recipes.map(recipe => ( //RENDER OUT EACH RECIPIE
         <div className="user-recipe-card">
-            <Recipecard />
+            <Recipecard key={recipe.id}title={recipe.title} image={recipe.image} imagetext={recipe.imagetext} description={recipe.description}/>
         </div>
     ))
 
-    
+
     return(
         <div className="user-recipe-container">
             {userRecipes}

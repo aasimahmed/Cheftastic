@@ -1,0 +1,23 @@
+.card-title-container{
+    margin: 0 auto;
+}
+.card-icons-container{
+display:flex;    
+}
+
+.card-description{
+    display:inline-block;
+}
+
+.card-image-container img{
+    display:block;
+    margin: 0 auto;
+}
+
+.card-icons{
+    float:right;
+}
+.card-icons .icon{
+    padding: 1.2em;
+    float:right;
+}

@@ -1,24 +1,14 @@
 import React from "react";
 import "./Homesidebar.css";
 
-const Homesidebar = () => {
+//COMPONENTS
+
+import HomesidebarRecipes from "../home-side-bar-recipes/Homesidebar-recipes";
+
+const Homesidebar = ({recipes}) => {
     return(
         <div className="homesidebar">
-            <div>
-            <h2>List of recipes user has added</h2>
-            <h2>RECIPE 2</h2>
-            <h2>RECIPE 3</h2>
-            </div>
-            <div>
-                <h2>List of recipes user has added</h2>
-                <h2>RECIPE 2</h2>
-                <h2>RECIPE 3</h2>
-            </div>
-            <div>
-                <h2>List of recipes user has added</h2>
-                <h2>RECIPE 2</h2>
-                <h2>RECIPE 3</h2>
-            </div>
+            <HomesidebarRecipes recipes={recipes}/>
         </div>
         
     )
