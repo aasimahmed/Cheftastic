@@ -1,23 +1,61 @@
-import React, {Component} from "react";
+import React from "react";
 import "./Homemaindisplay.css";
 
+//NODEMODULES
+import { connect } from "react-redux";
 
 //COMPONENTS
 import Title from "../../common/Title/Title";
 
+//
 
-class Homemaindisplay extends Component{
-
-    render(){
-
-        return(
-            <div className="home-main-display">
+const Homemaindisplay = ({currentRecipe}) => {
+        if(currentRecipe === undefined){
+            return(
+                <div className="home-main-display">
                 <div className="home-main-display-title">
                     <Title name="TITLE" titleClass="title"/>
                 </div>
             </div>
+            )
+        }
+        const ingredientslist = currentRecipe.ingredients.filter(val => !("" in val)).map((val, idx) => {
+            console.log(val)
+            let key = Object.keys(val);
+            return <li key={key}> {key[0]} : {val[key[0]]}</li>
+            
+        })
+        console.log(ingredientslist)
+        return(
+            <div className="home-main-display">
+                <div className="home-main-display-title">
+                    <span>{currentRecipe.id} : </span>
+                    <Title title={currentRecipe.title} titleClass="title"/>
+                    
+                </div>
+                <div className="home-main-display-image">
+                    <img src={currentRecipe.image} width="300px" alt={currentRecipe.imageText}/>
+                </div>
+                <div className="home-main-display-ingredients">
+                    {ingredientslist}
+                </div>
+                <article className="home-main-display-description">
+                    <p>{currentRecipe.description}</p>
+                </article>
+
+                <article>
+                    
+                </article>
+            </div>
         )
+    }
+
+const mapStateToProps = state => {
+    return{
+        currentRecipe : state.currentRecipe
     }
 }
 
-export default Homemaindisplay;
+const Homemaindisplayconnected = connect(mapStateToProps, null)(Homemaindisplay);
+
+export default Homemaindisplayconnected;

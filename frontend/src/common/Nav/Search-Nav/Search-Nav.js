@@ -13,19 +13,20 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setSearchValue: (name) => {
+        setSearchValue: () => {
+            const searchvalue = document.getElementById("nav-search").value;
             dispatch({
                 type: NAV_SEARCHVALUE_UPDATE,
-                searchvalue : name
+                searchvalue 
             });
         }
     };
 };
 
-const SearchNav = (props) => {
+const SearchNav = ({searchvalue, setSearchValue}) => {
     return(
-        <input id="nav-search" className= "nav-searchbar" type = "text" placeholder = "Search for a recipe" value={props.searchvalue} 
-        onChange={(e) => props.setSearchValue(e.target.value)}/>
+        <input id="nav-search" className= "nav-searchbar" type = "text" placeholder = "Search for a recipe" value={searchvalue} 
+        onChange={setSearchValue}/>
     )
 }
 
