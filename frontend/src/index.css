@@ -4,6 +4,8 @@ body {
   font-size: 62.5%;
   background-color: rgb(255, 245, 232);
   font-family: 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 code {
