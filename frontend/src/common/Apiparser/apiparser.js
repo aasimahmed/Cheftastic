@@ -1,9 +1,12 @@
-import React from "react";
-
 //take in an arr
 //map over each individual array object 
 //return a parsed object  - for each
 export const mealsdbparser = arr => {
+    if(arr === null || arr === undefined){
+        return {
+            title: "undefined"
+        }
+    }
     return arr.map(val => {
         return {
             id : val.idMeal,

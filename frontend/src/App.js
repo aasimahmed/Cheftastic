@@ -9,8 +9,9 @@ import { connect } from "react-redux";
 //COMPONENTS
 import Home from "./home/home"
 
-//REDUX ACTIONS
+//CONSTANT REDUX ACTIONS
 import { LOAD_MEALS } from "./store/actions/action-functions";
+import { SEARCH_MEALS_RESULTS } from "./store/actions/action-functions";
 
 //API Parser function
 
@@ -33,9 +34,9 @@ class App extends Component {
 
    searchData = async () => {
     const searchData = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${this.props.searchvalue}`)
-    const parsedSearchData = await mealsdbparser(searchData.data);
+    const parsedSearchData = await mealsdbparser(searchData.data.meals);
     
-    this,props.
+    this.props.searchMeals(parsedSearchData);
    }
   render() {
     return (
@@ -65,10 +66,10 @@ const mapDispatchToProps = dispatch => {
         meals
       })
     },
-    searchMeals : (searchResults) => {
+    searchMeals : (searchresults) => {
       dispatch({
         type: SEARCH_MEALS_RESULTS,
-        searchResults
+        searchresults
       })
     }
   }

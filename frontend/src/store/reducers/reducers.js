@@ -1,6 +1,7 @@
 import { LOAD_MEALS } from "../actions/action-functions";
 import { NAV_SEARCHVALUE_UPDATE } from "../actions/action-functions";
 import { SET_CURRENT_MEAL } from "../actions/action-functions";
+import { SEARCH_MEALS_RESULTS } from "../actions/action-functions";
 
 
 export const initialState = {
@@ -27,7 +28,7 @@ function rootReducer(state = initialState, action){
             return{
                 ...copyCurrentRecipe,
                 currentRecipe : filteredCurrentRecipe[0]
-            }
+            };
 
         case NAV_SEARCHVALUE_UPDATE:
             let copyState = {...state};
@@ -35,7 +36,16 @@ function rootReducer(state = initialState, action){
             return{
                 ...copyState,
                 searchvalue : action.searchvalue 
-                }
+                };
+
+
+        case SEARCH_MEALS_RESULTS:
+            let copyStateSearch = {...state};
+            console.log(action.searchresults)
+            return {
+                ...copyStateSearch,
+                searchresults : action.searchresults
+            }
 
  
         
