@@ -8,11 +8,13 @@
 }
 
 .nav-searchnav-icon:hover {
-    
-    transition: transform 1s;
-    cursor: pointer;
+    cursor:pointer;
+    background-color:rgb(241, 241, 241);
+    transition:background-color 1s;
+
 }
 
 .nav-searchnav-input{
     border-radius: 25px;
+    padding: 1.1em;
 }

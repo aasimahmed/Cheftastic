@@ -1,11 +1,14 @@
 import React from "react";
 import "./Homemainquerybox.css";
 
-const Homemainquerybox = () => {
+import { connect } from "react-redux";
+
+const Homemainquerybox = ({searchresults}) => {
     return(
         <div className="home-main-querybox">
             <div>
-                <h3>Search results : String</h3>
+                <h3>Search results : 
+                {(searchresults.length === undefined || searchresults.length === null) ? "No results found!" : `${searchresults.length} results found!`}</h3>
             </div>
             
             <div>
@@ -16,4 +19,24 @@ const Homemainquerybox = () => {
     )
 }
 
-export default Homemainquerybox;
+const mapStateToProps = (state) => {
+    return{
+        searchresults : state.searchresults
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return{
+    set : (item) => {  
+        dispatch({
+            type : "something"
+
+        })
+    }
+}
+}
+
+const Homemainqueryboxconnect = connect(mapStateToProps, mapDispatchToProps)(Homemainquerybox);
+
+
+export default Homemainqueryboxconnect;

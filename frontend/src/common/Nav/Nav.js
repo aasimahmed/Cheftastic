@@ -4,12 +4,15 @@ import "./Nav.css";
 //COMPONENTS 
 import SearchNav from "./Search-Nav/Search-Nav";
 
+//IMAGES
+import logo from "./logo.png";
+
 const Nav = ({searchData}) => {
 return(
     <nav>
         <div className="nav">
             <div className="nav-logo-left">
-                <h1>LOGO</h1>
+                <img alt="nav-logo" width="200px"src={logo} height="100px"/>
             </div> 
             <div className="nav-mid">
                 <SearchNav searchData={searchData}/>    

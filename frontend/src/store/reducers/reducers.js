@@ -5,7 +5,10 @@ import { SEARCH_MEALS_RESULTS } from "../actions/action-functions";
 
 
 export const initialState = {
-    searchvalue : ""
+    searchvalue : "",
+    searchresults: {
+        
+    }
 }
 
 function rootReducer(state = initialState, action){
@@ -27,7 +30,10 @@ function rootReducer(state = initialState, action){
             console.log(filteredCurrentRecipe[0])
             return{
                 ...copyCurrentRecipe,
-                currentRecipe : filteredCurrentRecipe[0]
+                currentRecipe : filteredCurrentRecipe[0],
+                searchresults : {
+                    title : undefined
+                }
             };
 
         case NAV_SEARCHVALUE_UPDATE:
@@ -44,7 +50,8 @@ function rootReducer(state = initialState, action){
             console.log(action.searchresults)
             return {
                 ...copyStateSearch,
-                searchresults : action.searchresults
+                searchresults : action.searchresults,
+                currentRecipe : null
             }
 
  

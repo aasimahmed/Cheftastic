@@ -4,7 +4,7 @@
 export const mealsdbparser = arr => {
     if(arr === null || arr === undefined){
         return {
-            title: "undefined"
+            title: undefined
         }
     }
     return arr.map(val => {

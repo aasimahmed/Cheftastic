@@ -1,4 +1,10 @@
+.header-container{
+    max-width: 1200px;
+}
+
+
 .landing-container{
     margin: 0 auto;
     max-width: 1200px;
 }
+

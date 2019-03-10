@@ -26,6 +26,8 @@ const HomesidebarRecipes = ({meals, setCurrent}) => {
                         imagetext={recipe.imagetext} 
                         description={recipe.description}
                         link = {recipe.link}
+                        imageheight="300px"
+                        imagewidth="70%"
                         
                         />
         </div>

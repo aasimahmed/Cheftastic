@@ -3,3 +3,12 @@
     height: 75vh;
     margin: 10%;
 }
+
+.home-main-display-searchresults{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.home-main-display-recipecard:hover{
+cursor:pointer;
+}

@@ -12,7 +12,7 @@ const Home  = ({searchData}) => {
     
         return(
         <div>
-            <header>
+            <header className="header-container">
                 <Nav searchData={searchData}/>
             </header>
             <section className="landing-container">
