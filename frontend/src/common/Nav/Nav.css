@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "left mid right";
+    background-color: blue;
 }
 
 .nav .nav-logo-left{
@@ -12,6 +13,8 @@
 .nav .nav-mid{
     grid-area: mid;
     background-color:blue;
+    justify-self: center;
+    
 }
 
 .nav .nav-right{

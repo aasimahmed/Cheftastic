@@ -1,0 +1,18 @@
+.nav-searchnav-container{
+    margin : 0 auto;
+}
+
+.nav-searchnav-icon{
+    padding-left:0.3em; 
+    padding-top: 0.2em;
+}
+
+.nav-searchnav-icon:hover {
+    
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+.nav-searchnav-input{
+    border-radius: 25px;
+}

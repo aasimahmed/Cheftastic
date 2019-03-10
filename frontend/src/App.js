@@ -8,15 +8,13 @@ import { connect } from "react-redux";
 
 //COMPONENTS
 import Home from "./home/home"
-import recipelist from "./recipelist/recipelist"
 
 //REDUX ACTIONS
 import { LOAD_MEALS } from "./store/actions/action-functions";
 
-//KEY NEED TO ENCRYPT
-let appid;
-let appkey;
-const baseurl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+//API Parser function
+
+import {mealsdbparser } from "./common/Apiparser/apiparser";
 
 
 
@@ -26,38 +24,24 @@ class App extends Component {
   async componentDidMount(){
     const latestRecipes = await axios.get(`https://www.themealdb.com/api/json/v1/1/latest.php`);
     console.log(latestRecipes)
-    const meals = await latestRecipes.data.meals.map(val => {
-       //HAVE ACCESS TO strIngredient - need to check its not an empty string
-      return {
-          id : val.idMeal,
-          title: val.strMeal,
-          description : val.strInstructions,
-          image : val.strMealThumb,
-          imageText : val.strTags,
-          link : val.strSource,
-          youtube : val.strYoutube,
-          ingredients : [
-            {[val.strIngredient1] : val.strMeasure1},
-            {[val.strIngredient2] : val.strMeasure2},
-            {[val.strIngredient3] : val.strMeasure3},
-            {[val.strIngredient4] : val.strMeasure4},
-            {[val.strIngredient5] : val.strMeasure5}
-             
-          ]
-          
-          }
-
-        })
+    const meals = await mealsdbparser(latestRecipes.data.meals);
+    console.log(meals);
   
    this.props.setMeals(meals)
-   
 
   }
+
+   searchData = async () => {
+    const searchData = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${this.props.searchvalue}`)
+    const parsedSearchData = await mealsdbparser(searchData.data);
+    
+    this,props.
+   }
   render() {
     return (
       <div className="app-container">
         <header className="app-main-header">
-         <Home/>
+         <Home searchData={this.searchData}/>
 
         </header>
       </div>
@@ -68,7 +52,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    meals : state.meals
+    meals : state.meals,
+    searchvalue : state.searchvalue
   }
 }
 
@@ -78,6 +63,12 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: LOAD_MEALS,
         meals
+      })
+    },
+    searchMeals : (searchResults) => {
+      dispatch({
+        type: SEARCH_MEALS_RESULTS,
+        searchResults
       })
     }
   }

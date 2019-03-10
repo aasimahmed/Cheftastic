@@ -23,10 +23,27 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-const SearchNav = ({searchvalue, setSearchValue}) => {
+const SearchNav = ({searchvalue, setSearchValue, searchData}) => {
     return(
-        <input id="nav-search" className= "nav-searchbar" type = "text" placeholder = "Search for a recipe" value={searchvalue} 
-        onChange={setSearchValue}/>
+        <div className="nav-searchnav-container">
+            <input id="nav-search" className= "nav-searchnav-input" type = "text" placeholder = "Search for a recipe" value={searchvalue} 
+            onChange={setSearchValue}
+            onKeyPress={(e) =>  {
+                if(e.which === 13){
+                    searchData();
+                }
+                return;
+            }
+        }
+            />
+            
+            <label className="nav-searchnav-icon" htmlFor="nav-search">
+            
+                <i onClick={searchData} className="fas fa-search fa-2x"></i>
+
+   
+            </label>
+        </div>
     )
 }
 

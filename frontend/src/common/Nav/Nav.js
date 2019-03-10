@@ -4,7 +4,7 @@ import "./Nav.css";
 //COMPONENTS 
 import SearchNav from "./Search-Nav/Search-Nav";
 
-const Nav = () => {
+const Nav = ({searchData}) => {
 return(
     <nav>
         <div className="nav">
@@ -12,7 +12,7 @@ return(
                 <h1>LOGO</h1>
             </div> 
             <div className="nav-mid">
-                <SearchNav />    
+                <SearchNav searchData={searchData}/>    
             </div>
             <div className="nav-right">
                 <ul className="nav-right-list-container">
