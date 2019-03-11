@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import './App.css';
-
-
-//NODEMODULES
 import axios from "axios";
 import { connect } from "react-redux";
 
-//COMPONENTS
-import Home from "./home/home"
 
-//CONSTANT REDUX ACTIONS
+
 import { LOAD_MEALS } from "./store/actions/action-functions";
 import { SEARCH_MEALS_RESULTS } from "./store/actions/action-functions";
-
-//API Parser function
-
 import {mealsdbparser } from "./common/Apiparser/apiparser";
 
+import './App.css';
+
+//COMPONENTS
+import Home from "./home/home";
 
 
 class App extends Component {
