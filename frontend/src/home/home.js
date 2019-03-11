@@ -3,7 +3,6 @@ import "./home.css";
 
 //COMPONENTS
 
-import Nav from "../common/Nav/Nav";
 import Homelanding from "./home-landing/Homelanding";
 
 
@@ -12,9 +11,7 @@ const Home  = ({searchData}) => {
     
         return(
         <div>
-            <header className="header-container">
-                <Nav searchData={searchData}/>
-            </header>
+
             <section className="landing-container">
                 <Homelanding/>
             </section>

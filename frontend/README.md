@@ -9,7 +9,7 @@ Axios
 User stories:
 Search for your favourite recipes
 Add recipes to your profile
-Begin Cooking : Select recipe - set timer and go - all active recipe ingredients listed.
+Begin Cooking : Select recipe - set timer and go - all active recipe ingredients listed. - this will be on everypage in Navbar.
 
 Authentication to logic to your user profile
 On profile user can search added recipes - Delete added recipes

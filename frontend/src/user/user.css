@@ -1,0 +1,20 @@
+.user-container{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "userbar main";
+    text-align: center;
+}
+
+.user-side-profilebar-container{
+    grid-area:userbar;
+    margin: 0 auto;
+}
+
+.user-main-slider-container{
+    grid-area:main;
+}
+
+.user-main-recipepreview-container{
+    margin-top: 40vh;
+    grid-area:main;
+}

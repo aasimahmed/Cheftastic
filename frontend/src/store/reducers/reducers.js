@@ -8,8 +8,25 @@ export const initialState = {
     searchvalue : "",
     searchresults: {
         
-    }
-}
+    },
+    user : {
+        recipes : [{
+                id: "52966",
+                image: "https://www.themealdb.com/images/media/meals/1550442508.jpg",
+        imageText: "Sweet,Snack,Treat",
+        link: "http://www.donalskehan.com/recipes/chocolate-caramel-rice-crispy-treats/",
+        title: "Chocolate Caramel Crispy",
+        youtube: "https://www.youtube.com/watch?v=qsk_At_gjv0"
+        },
+        {
+        id: "52966",
+        image: "https://www.themealdb.com/images/media/meals/1550442508.jpg",
+imageText: "Sweet,Snack,Treat",
+link: "http://www.donalskehan.com/recipes/chocolate-caramel-rice-crispy-treats/",
+title: "Chocolate Caramel Crispy",
+youtube: "https://www.youtube.com/watch?v=qsk_At_gjv0"}
+    ]
+}}
 
 function rootReducer(state = initialState, action){
     switch(action.type){

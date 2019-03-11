@@ -7,8 +7,14 @@
 
 .nav .nav-logo-left{
     grid-area: left;
-    justify-self:left;
+    justify-self:center;
     
+    
+}
+
+.nav .nav-logo-left .nav-logo-left-image{
+    display:block;
+    margin: 0 auto;
 }
 
 .nav .nav-mid{
