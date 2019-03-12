@@ -3,7 +3,7 @@ import "./Homemaindisplay.css";
 
 //NODEMODULES
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 //COMPONENTS
 import Title from "../../common/Title/Title";
 import Recipecard from "../../common/Recipecard/Recipecard";
@@ -15,6 +15,7 @@ const Homemaindisplay = ({currentRecipe, searchresults}) => {
         if(searchresults.length > 0){
             const searchcards = searchresults.map(val => {
                 return(
+                    <Link to={`/recipes/${val.id}`}>
                     <div className="home-main-display-recipecard">
                     <Recipecard
                         key={val.id}
@@ -27,6 +28,7 @@ const Homemaindisplay = ({currentRecipe, searchresults}) => {
                         imagewidth="200px"
                     />
                     </div>
+                    </Link>
                 )
                 
             })

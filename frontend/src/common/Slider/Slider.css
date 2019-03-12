@@ -1,0 +1,20 @@
+
+.slider-container{
+    display:grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.arrow{
+    display:inline-block;
+    align-self: center;
+}
+
+.slider-card-container{
+    display:inline-block;
+    margin: 1.2em;
+    font-size: 0.8em;
+}
+
+.card-icons-container{
+    display: none;
+}
