@@ -45,15 +45,17 @@ class App extends Component {
         </header>
       <Switch>
         <Route exact path="/" render={(...props) => (
-                    <Home />
+          <Home />
                   )} />
+
+        <Route path="/user" render ={(...props) => ( //Check if logged in, if not then redirect to login page
+          <User />
+        )} />
 
         <Route path="/login" render={(...props) => (
           <h2>This is the login page make a login component</h2>
         )}/>
-        <Route path="/user" render ={(...props) => ( //Check if logged in, if not then redirect to login page
-          <User />
-        )} />
+
 
         <Route exact path="/user/myrecipes" render={(...props) => (
           <h2>This is the myuser Recipes route - pulls data from myuserrecipes and displays</h2>

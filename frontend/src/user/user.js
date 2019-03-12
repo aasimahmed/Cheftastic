@@ -3,7 +3,7 @@ import "./user.css";
 
 //Components
 import Userprofilebar from "./User-sideprofilebar/Userprofilebar"
-import Slider from "../common/Slider/Slider";
+import Usersliderview from "../user/User-main-sliderview/Usersliderview";
 import Recipepreview from "../common/Recipepreview/Recipepreview";
 
 const User = () => {
@@ -16,7 +16,7 @@ const User = () => {
                 <Userprofilebar />
             </div>
             <div className="user-main-slider-container">
-                <Slider />
+                <Usersliderview />
             </div>
             <div className="user-main-recipepreview-container">
                 <Recipepreview />

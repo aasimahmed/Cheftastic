@@ -1,9 +1,12 @@
 
 
+
 export const recipeLocationChecker = (recipe) => {
     switch(recipe){
-        case USER_RECIPES : 
-        return user.recipe
+        case "USER_RECIPES" : 
+        return {
+            state : user.recipe
+        }
 
 
 

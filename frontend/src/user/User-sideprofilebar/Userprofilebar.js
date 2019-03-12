@@ -8,6 +8,10 @@ const Userprofilebar = () => {
 
             </div>
             <h3>Username</h3>
+            <div className="user-profile-list-container">
+                <li>
+                </li>  
+            </div> 
 
 
         </React.Fragment>
@@ -16,3 +20,6 @@ const Userprofilebar = () => {
 }
 
 export default Userprofilebar
+
+
+//THIS COMPONENT WILL NEED ACCESS TO ALL AVAILABLE LISTS IN STATE.RECIPES.USER.RECIPES - then render out lists.

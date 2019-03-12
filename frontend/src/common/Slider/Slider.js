@@ -12,8 +12,19 @@ import Recipecard from "../Recipecard/Recipecard";
 const Slider = ({userrecipes, scroll}) => {
     const recipelist = userrecipes.map(val => {
 return(
-    <Link to={`/recipes/${val.id}`}>   
-    <div className="slider-card-container">
+    // <Link to={`/recipes/${val.id}`}>   
+    <div className="slider-card-container" draggable="true" onDragStart={(e) => {
+        console.log("being started drag")
+
+        e.dataTransfer.setData('text/uri-list', [val.image, val.youtube, val.link])
+
+        e.dataTransfer.setData("text/plain", [val.id, val.title])
+        
+        e.dataTransfer.effectAllowed = "copy"
+
+
+    }
+    }>
     <Recipecard
         key={val.id}
         id={val.id}
@@ -23,7 +34,7 @@ return(
         imagewidth="100px" 
         />
     </div>
-    </Link> 
+    // </Link> 
     )
 })
 
